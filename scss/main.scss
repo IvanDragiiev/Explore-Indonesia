@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fonts/dmSans/DMSans-Bold.woff2") format("woff2"),
+        url("../fonts/dmSans/DMSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans 36pt";
+    src: url("../fonts/dmSans/DMSans36pt-Regular.woff2") format("woff2"),
+        url("../fonts/dmSans/DMSans36pt-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM Sans 36pt";
+    src: url("../fonts/dmSans/DMSans36pt-Medium.woff2") format("woff2"),
+        url("../fonts/dmSans/DMSans36pt-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+h1 {
+    font-family: "DM Sans";
+    font-size: 405px;
+    color: var(--grey-reduced);
+}
+
+:root {
+    // colors
+    --main-red: #dd2242;
+    --blue---background: #010a20;
+    --white: #fff;
+    --text-lighten: #e0e0e0;
+    --grey-reduced: #85a3b2;
+    --light-text: rgba(21, 20, 57, 0.4);
+    --paragraph-dark: #6f7787;
+    // fonts
+    --font-family: "DM Sans", sans-serif;
+    --second-family: "DM Sans 36pt", sans-serif;
+}
+
+body {
+    background-image: url(../img/header_bg.png);
+}
