@@ -32,16 +32,20 @@
                     <nav class="nav" aria-label="Main navigation">
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Destinations</a>
+                                <a href="#destination" class="nav__link">
+                                    Destinations
+                                </a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Experiences</a>
+                                <a href="#about" class="nav__link">About</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">About</a>
+                                <a href="#experience" class="nav__link">
+                                    Experiences
+                                </a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Gallery</a>
+                                <a href="#gallery" class="nav__link">Gallery</a>
                             </li>
                         </ul>
                     </nav>
@@ -81,7 +85,7 @@
                 </div>
             </section>
         </div>
-        <section class="places">
+        <section class="places" id="destination">
             <div class="walkway_bg">
                 <div class="container">
                     <div class="places_wrapp">
@@ -127,26 +131,42 @@
                 </div>
             </div>
         </section>
-        <div class="secrets_bg">
+        <div class="secrets_bg" id="about">
             <section class="secrets">
                 <div class="container">
                     <h4 class="secrets_title">Explore Our Secrets</h4>
                     <div class="secrets_places">
-                        <img
-                            src="./img/secrets_img-3.jpg"
-                            alt="place 1"
-                            class="secrets_places-img"
-                        />
-                        <img
-                            src="./img/secrets_img-2.jpg"
-                            alt="place 2"
-                            class="secrets_places-img"
-                        />
-                        <img
-                            src="./img/secrets_img-1.png"
-                            alt="place 3"
-                            class="secrets_places-img"
-                        />
+                        <div class="slider-wrapper" id="sliderWrapper">
+                            <img
+                                src="./img/secrets_img-3.jpg"
+                                alt="Тайный водопад"
+                                class="secrets_places-img"
+                            />
+                            <img
+                                src="./img/secrets_img-2.jpg"
+                                alt="Скрытая пещера"
+                                class="secrets_places-img"
+                            />
+                            <img
+                                src="./img/secrets_img-1.jpg"
+                                alt="Заброшенный замок"
+                                class="secrets_places-img"
+                            />
+                        </div>
+
+                        <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+                        <button class="nav-btn next-btn" id="nextBtn">›</button>
+
+                        <div class="slide-counter" id="slideCounter">
+                            <span id="currentSlide">1</span> /
+                            <span id="totalSlides">3</span>
+                        </div>
+
+                        <div class="dots-container">
+                            <span class="dot active" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -201,17 +221,19 @@
                 </div>
             </div>
         </section>
-        <section class="experience">
+        <section class="experience" id="experience">
             <div class="container">
                 <h5 class="experience_title">
                     Live a life like you wouldn’t imagine, experience a life you
                     wouldn’t expect.
                 </h5>
-                <img
-                    src="./img/experience_title.jpg"
-                    alt=""
-                    class="experience_title-img"
-                />
+                <div class="center">
+                    <img
+                        src="./img/experience_title.jpg"
+                        alt=""
+                        class="experience_title-img"
+                    />
+                </div>
                 <div class="experience_wrapp">
                     <img
                         src="./img/experience_img1.jpg"
@@ -240,7 +262,7 @@
                 </div>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <h5 class="gallery_title">Photo Gallery</h5>
                 <p class="gallery_desc">
@@ -251,32 +273,32 @@
                     <img
                         src="./img/gallery_img-1.jpg"
                         alt=""
-                        class="gallery_img item1 item1"
+                        class="gallery_img item1 gallery__item"
                     />
                     <img
                         src="./img/gallery_img-2.jpg"
                         alt=""
-                        class="gallery_img item2"
+                        class="gallery_img item2 gallery__item"
                     />
                     <img
                         src="./img/gallery_img-3.jpg"
                         alt=""
-                        class="gallery_img item3"
+                        class="gallery_img item3 gallery__item"
                     />
                     <img
                         src="./img/gallery_img-4.jpg"
                         alt=""
-                        class="gallery_img item4"
+                        class="gallery_img item4 gallery__item"
                     />
                     <img
                         src="./img/gallery_img-5.jpg"
                         alt=""
-                        class="gallery_img item5"
+                        class="gallery_img item5 gallery__item"
                     />
                     <img
                         src="./img/gallery_img-6.jpg"
                         alt=""
-                        class="gallery_img item6"
+                        class="gallery_img item6 gallery__item"
                     />
                 </div>
             </div>
@@ -284,7 +306,6 @@
         <section class="travel">
             <div class="container">
                 <h5 class="travel_title">Getting there</h5>
-
                 <ol class="travel_steps travel_wrapp">
                     <li class="travel_steps-item">
                         <span class="item_number">1</span>
@@ -300,6 +321,7 @@
                                 sed eros tincidunt, viverra neque auctor,
                                 lobortis enim.
                             </p>
+                            <button class="toggle-btn">Show more</button>
                         </div>
                     </li>
                     <li class="travel_steps-item">
@@ -317,6 +339,7 @@
                                     Praesent sed eros tincidunt, viverra neque
                                     auctor, lobortis enim.
                                 </p>
+                                <button class="toggle-btn">Show more</button>
                             </div>
                             <div class="second_block">
                                 <img
@@ -333,6 +356,9 @@
                                         adipiscing elit. Phasellus dapibus
                                         mauris in lectus tempus, eget tincidunt.
                                     </p>
+                                    <button class="toggle-btn">
+                                        Show more
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -348,11 +374,13 @@
                                 adipiscing elit. Phasellus dapibus mauris in
                                 lectus tempus, eget tincidunt lacus varius.
                             </p>
+                            <button class="toggle-btn">Show more</button>
                         </div>
                     </li>
                 </ol>
             </div>
         </section>
+        <div class="stop-header-trigger"></div>
         <footer class="footer">
             <a href="#header" class="footer_scroll">
                 <svg
@@ -461,5 +489,6 @@
                 </div>
             </div>
         </footer>
+        <script src="./script.js"></script>
     </body>
 </html>

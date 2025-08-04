@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -45,17 +46,30 @@ html {
   height: 100vh;
   position: relative;
 }
-.mountain_bg .explore_wrapp {
-  position: absolute;
-  bottom: 0;
-  min-width: 1170px;
+@media (max-width: 1172px) {
+  .mountain_bg {
+    height: auto;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  transition: all ease 0.3s;
+}
+
+.header.hide {
+  transform: translateY(-100%);
 }
 
 .header_wrapp {
   display: flex;
   align-items: center;
   gap: 78px;
-  padding: 28px 0 0 28px;
 }
 
 .header_logo-wrapp {
@@ -103,11 +117,11 @@ html {
 }
 
 .explore {
-  margin-top: 190px;
+  padding-top: 266px;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1541px) {
   .explore {
-    margin-top: 100px;
+    padding-top: 190px;
   }
 }
 
@@ -120,7 +134,7 @@ html {
   color: var(--white);
   margin-bottom: 31px;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1540px) {
   .explore_title {
     font-size: 90px;
   }
@@ -147,11 +161,24 @@ html {
 }
 
 .explore_wrapp {
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 200px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 31px 70px;
+}
+@media (max-width: 1172px) {
+  .explore_wrapp {
+    position: static;
+    flex-direction: column;
+    padding: 0;
+    gap: 32px;
+    width: 314px;
+    margin: 0 auto;
+    margin-top: 84px;
+  }
 }
 
 .explore_card {
@@ -274,10 +301,14 @@ html {
   margin-bottom: 40px;
 }
 
-.secrets_places {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.slider-wrapper {
+  display: flex;
+  align-items: center;
   gap: 20px;
+}
+
+.slide-counter {
+  display: none;
 }
 
 .secrets_places-img {
@@ -549,6 +580,16 @@ html {
   border-radius: 10px;
 }
 
+.gallery__item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.gallery__item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .travel {
   background-color: #dce7f2;
   padding: 117px 0;
@@ -578,6 +619,18 @@ html {
   background-color: var(--main-red);
   border-radius: 50%;
   z-index: 2;
+}
+
+.toggle-btn {
+  display: none;
+  margin: 15px auto 0 auto;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: var(--main-red);
 }
 
 .travel_steps li::marker {
@@ -717,4 +770,155 @@ html {
 }
 .social_group .social_link:hover .social_ico {
   fill: #010a20;
+}
+
+@media (max-width: 1172px) {
+  .container {
+    max-width: 1100px;
+  }
+  .walkway_bg {
+    padding-top: 80px;
+  }
+  .places_wrapp {
+    flex-direction: column;
+    justify-content: start;
+    gap: 40px;
+    padding-bottom: 50px;
+  }
+  .places_wrapp .places_img {
+    height: 314px;
+  }
+  .places_wrapp .places_info {
+    max-width: 375px;
+  }
+  .secrets_places {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .secrets_places-img {
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+  }
+  /* Навигационные кнопки */
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .nav-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+  }
+  .prev-btn {
+    left: 20px;
+  }
+  .next-btn {
+    right: 20px;
+  }
+  /* Точки-индикаторы */
+  .dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .dot.active {
+    background: white;
+    transform: scale(1.3);
+  }
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  /* Счетчик слайдов */
+  .slide-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  .numbers_wrapp {
+    flex-direction: column;
+    gap: 80px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  .center .experience_title-img {
+    width: 312px;
+  }
+  .gallery_wrapp {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery_wrapp .item1 {
+    grid-row: span 2;
+  }
+  .gallery_wrapp .item2 {
+    grid-row: span 1;
+  }
+  .gallery_wrapp .item5 {
+    grid-row: span 1;
+  }
+  .gallery_wrapp .item6 {
+    grid-row: span 1;
+  }
+  .travel_steps-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .travel_steps-block {
+    text-align: center;
+  }
+  .second_block {
+    flex-direction: column;
+    text-align: center;
+  }
+  .travel_steps-info {
+    max-height: 30px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .travel_steps-info.expanded {
+    max-height: 1000px;
+  }
+  .toggle-btn {
+    display: flex;
+  }
 }/*# sourceMappingURL=main.css.map */
