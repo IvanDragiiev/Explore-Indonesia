@@ -8,8 +8,8 @@
         <title>Explore Indonesia</title>
     </head>
     <body>
-        <div class="mountain_bg">
-            <header class="header" id="header">
+        <div class="mountain_bg" id="header">
+            <header class="header">
                 <div class="header_wrapp">
                     <div class="header_logo-wrapp">
                         <svg
@@ -29,6 +29,15 @@
                             Indonesia</a
                         >
                     </div>
+                    <button
+                        class="burger-btn"
+                        aria-label="Toggle menu"
+                        aria-expanded="false"
+                    >
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
                     <nav class="nav" aria-label="Main navigation">
                         <ul class="nav__list">
                             <li class="nav__item">
@@ -451,7 +460,6 @@
                             />
                         </svg>
                     </a>
-
                     <a href="#" class="social_link">
                         <svg
                             width="16"
@@ -468,7 +476,6 @@
                             />
                         </svg>
                     </a>
-
                     <a href="#" class="social_link">
                         <svg
                             width="14"
@@ -485,8 +492,9 @@
                             />
                         </svg>
                     </a>
-                    <p class="copyright">Copyright © 2019</p>
+                    <!-- <p class="copyright">Copyright © 2019</p> -->
                 </div>
+                <p class="copyright">Copyright © 2019</p>
             </div>
         </footer>
         <script src="./script.js"></script>

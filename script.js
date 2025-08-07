@@ -141,3 +141,25 @@ toggleButtons.forEach((btn) => {
             : "Show more";
     });
 });
+
+// JavaScript для управления меню
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerBtn = document.querySelector(".burger-btn");
+    const nav = document.querySelector(".nav");
+
+    burgerBtn.addEventListener("click", () => {
+        const isExpanded = burgerBtn.getAttribute("aria-expanded") === "true";
+        burgerBtn.setAttribute("aria-expanded", !isExpanded);
+        nav.classList.toggle("active");
+    });
+
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll(".nav__link").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 1171) {
+                burgerBtn.setAttribute("aria-expanded", "false");
+                nav.classList.remove("active");
+            }
+        });
+    });
+});
